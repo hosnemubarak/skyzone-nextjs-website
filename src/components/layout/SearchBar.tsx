@@ -117,9 +117,9 @@ export default function SearchBar({ isOpen, onClose }: SearchBarProps) {
     : [];
 
   const popularSuggestions = [
-    "Hybrid Inverter",
-    "On-Grid Inverter",
-    "Off-Grid Inverter",
+    "Argon Series",
+    "Zapher Series",
+    "Inverter",
     "Lithium Battery",
     "Solar Pump VFD",
   ];
