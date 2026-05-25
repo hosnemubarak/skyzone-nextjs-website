@@ -117,11 +117,11 @@ export default function SearchBar({ isOpen, onClose }: SearchBarProps) {
     : [];
 
   const popularSuggestions = [
-    "Argon Series",
-    "Zapher Series",
-    "Powerwall Battery",
-    "Powerbase Battery",
-    "Xentra VFD",
+    "Hybrid Inverter",
+    "On-Grid Inverter",
+    "Off-Grid Inverter",
+    "Lithium Battery",
+    "Solar Pump VFD",
   ];
 
   return (

@@ -65,8 +65,8 @@ xeroxG4ProSmallModels.forEach((model, idx) => {
   addProduct({
     slug: `xerox-g4-pro-${model.name.replace("/", "-").toLowerCase()}`,
     name: `Xerox G4 Pro ${model.name} Three Phase On-Grid Inverter`,
-    category: "Inverter",
-    categorySlug: "inverter",
+    category: "On-Grid Inverter",
+    categorySlug: "on-grid-inverter",
     brand: "Knox",
     series: "Xerox",
     description: `The Knox Xerox G4 Pro ${model.name} is a high-performance three-phase grid-tied string inverter with a rated AC output of ${model.power} and support for up to ${model.pv} PV array power. Featuring dual MPPT trackers and an IP66 rated all-aluminium casing, it is perfect for residential and commercial solar installations. Real-time commissioning is done via the AI Solar app.`,
@@ -114,8 +114,8 @@ xeroxG4ProLargeModels.forEach((model, idx) => {
   addProduct({
     slug: `xerox-g4-pro-${model.name.replace("/", "-").toLowerCase()}`,
     name: `Xerox G4 Pro ${model.name} Three Phase On-Grid Inverter`,
-    category: "Inverter",
-    categorySlug: "inverter",
+    category: "On-Grid Inverter",
+    categorySlug: "on-grid-inverter",
     brand: "Knox",
     series: "Xerox",
     description: `Designed for commercial and industrial rooftops, the Xerox G4 Pro ${model.name} is a high-power three-phase string inverter with a rated AC output of ${model.power}. It features ${model.mppts} MPPT trackers for flexible PV array designs under complex conditions and ShadeSol technology to optimize generation under shade. Includes Phoenix Contact connectors and Type II AC & DC surge protection.`,
@@ -162,8 +162,8 @@ xeroxG4ProMaxModels.forEach((model, idx) => {
   addProduct({
     slug: `xerox-g4-pro-${model.name.toLowerCase()}`,
     name: `Xerox G4 Pro ${model.name} Three Phase On-Grid Inverter`,
-    category: "Inverter",
-    categorySlug: "inverter",
+    category: "On-Grid Inverter",
+    categorySlug: "on-grid-inverter",
     brand: "Knox",
     series: "Xerox",
     description: `The industrial-grade Xerox G4 Pro ${model.name} series delivers high-power three-phase conversion with ${model.mppts} MPPT trackers. Designed to support modern high-power bifacial solar modules (up to 21A per string), it achieves an outstanding maximum efficiency of 99.0%. Includes built-in AFCI protection, smart fan cooling, and Type II SPD protection on both AC and DC sides.`,
@@ -218,8 +218,8 @@ xeroxG4Models.forEach((model) => {
   addProduct({
     slug: `xerox-g4-${model.name.replace("/", "-").toLowerCase()}`,
     name: `Xerox G4 ${model.name} Three Phase On-Grid Inverter`,
-    category: "Inverter",
-    categorySlug: "inverter",
+    category: "On-Grid Inverter",
+    categorySlug: "on-grid-inverter",
     brand: "Knox",
     series: "Xerox",
     description: `The standard Xerox G4 ${model.name} series provides cost-effective, high-efficiency three-phase grid-tied conversion. Perfect for residential and commercial systems, it features a rated AC output of ${model.power} and supports up to ${model.pv} PV input power. Includes dual MPPTs, IP66-rated enclosure, and quiet natural convection cooling.`,
@@ -269,8 +269,8 @@ argonModels.forEach((model, idx) => {
   addProduct({
     slug: `argon-${model.name.toLowerCase()}`,
     name: `Argon ${model.name} Single Phase Hybrid Inverter`,
-    category: "Inverter",
-    categorySlug: "inverter",
+    category: "Off-Grid Inverter",
+    categorySlug: "off-grid-inverter",
     brand: "Knox",
     series: "Argon",
     description: `The Argon ${model.name} is a highly customizable single-phase hybrid and off-grid inverter rated at ${model.power}. It features a built-in MPPT controller supporting up to ${model.pv} PV input power, a colored LCD with status-responsive RGB lights, and a battery-independent design. It is fully compatible with Lithium batteries (LiFePO4) via RS485 communication, and high-power models support parallel stacking.`,
@@ -316,8 +316,8 @@ kryptonEcoModels.forEach((model) => {
   addProduct({
     slug: `krypton-eco-${model.name.replace(" ", "-").toLowerCase()}`,
     name: `Krypton ${model.name} Hybrid Inverter with Grid Feeding`,
-    category: "Inverter",
-    categorySlug: "inverter",
+    category: "Hybrid Inverter",
+    categorySlug: "hybrid-inverter",
     brand: "Knox",
     series: "Krypton",
     description: `The Krypton Eco ${model.name} is a single-phase hybrid inverter with grid-feeding capability. Featuring a rated power of ${model.power} and grid-feeding capacity of ${model.gridFeed}, it supports battery-independent operation, a built-in anti-dust kit, and smart battery equalization. Ideal for residential users seeking to lower electricity bills by feeding excess solar energy back into the grid.`,
@@ -367,8 +367,8 @@ kryptonModels.forEach((model, idx) => {
   addProduct({
     slug: `krypton-${model.name.toLowerCase()}`,
     name: `Krypton ${model.name} Touchscreen Hybrid Inverter`,
-    category: "Inverter",
-    categorySlug: "inverter",
+    category: "Hybrid Inverter",
+    categorySlug: "hybrid-inverter",
     brand: "Knox",
     series: "Krypton",
     description: `The Krypton ${model.name} is a premium single-phase grid-feeding hybrid inverter rated at ${model.power}. It features a large HMI touchscreen on advanced models, supporting high PV input currents (up to 30A), dual outputs for smart load management, and parallel expansion up to 9 units (9000/9055 models) or 6 units (12002-15002 models). Compatible with utility grids, generators, and batteries.`,
@@ -414,8 +414,8 @@ xenonModels.forEach((model) => {
   addProduct({
     slug: `xenon-${model.name.toLowerCase()}`,
     name: `Xenon ${model.name} ${model.phase} Hybrid Inverter`,
-    category: "Inverter",
-    categorySlug: "inverter",
+    category: "Hybrid Inverter",
+    categorySlug: "hybrid-inverter",
     brand: "Knox",
     series: "Xenon",
     description: `The Xenon ${model.name} is an IP66 rated waterproof and dustproof ${model.phase.toLowerCase()} hybrid inverter rated at ${model.power}. It features a large 7-inch HMI color touchscreen, dual MPPT trackers, a battery-independent design, and support for parallel operation. Fully compatible with generator inputs and high-power PV panels.`,
@@ -460,8 +460,8 @@ zynexModels.forEach((model) => {
   addProduct({
     slug: `zynex-${model.name.toLowerCase()}`,
     name: `Zynex ${model.name} Single Phase Hybrid Inverter`,
-    category: "Inverter",
-    categorySlug: "inverter",
+    category: "Hybrid Inverter",
+    categorySlug: "hybrid-inverter",
     brand: "Knox",
     series: "Zynex",
     description: `The Zynex ${model.name} is a high-performance single-phase hybrid inverter with 3 independent MPPT trackers. Rated at ${model.power} and supporting up to ${model.pv} PV array power, it allows flexible solar setups on complex orientations. With IP66 protection, ShadeSol shadow management, and ultra-fast <10ms UPS transfer, it ensures uninterrupted power.`,
@@ -511,8 +511,8 @@ zapherModels.forEach((model, idx) => {
   addProduct({
     slug: `zapher-${model.name.replace(".3P", "-3p").toLowerCase()}`,
     name: `Zapher ${model.name} ${model.phase} Hybrid Inverter`,
-    category: "Inverter",
-    categorySlug: "inverter",
+    category: "Hybrid Inverter",
+    categorySlug: "hybrid-inverter",
     brand: "Knox",
     series: "Zapher",
     description: `The Zapher ${model.name} is a highly scalable ${model.phase.toLowerCase()} hybrid inverter with a rated power of ${model.power}. It features dual inputs (GEN/AC) for flexible generator/grid connection, support for up to ${model.pv} PV array input power, and IP65/IP66 environment protection. High-power models operate on a high-voltage battery range (200-900V) and support up to 4 MPPTs.`,
@@ -728,9 +728,21 @@ export const products = productsList;
 // Category metadata list defining the standard categories based on product types
 const rawCategories = [
   {
-    name: "Inverter",
-    slug: "inverter",
-    description: "Knox Hybrid, Off-Grid & On-Grid Inverters",
+    name: "Hybrid Inverter",
+    slug: "hybrid-inverter",
+    description: "Knox Hybrid Solar Inverters",
+    icon: "Zap",
+  },
+  {
+    name: "On-Grid Inverter",
+    slug: "on-grid-inverter",
+    description: "Knox On-Grid Grid-Tied Solar Inverters",
+    icon: "Power",
+  },
+  {
+    name: "Off-Grid Inverter",
+    slug: "off-grid-inverter",
+    description: "Knox Off-Grid Solar Inverters",
     icon: "Zap",
   },
   {
