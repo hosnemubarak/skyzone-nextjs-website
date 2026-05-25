@@ -3,6 +3,7 @@
 import { Phone, MessageCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import { companyInfo } from "@/data/navigation";
 
 export default function ContactCTA() {
   return (
@@ -28,7 +29,7 @@ export default function ContactCTA() {
                 Contact Us
               </Button>
               <a
-                href="https://wa.me/8801XXXXXXXXX"
+                href={companyInfo.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-whatsapp text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-all hover:-translate-y-0.5"

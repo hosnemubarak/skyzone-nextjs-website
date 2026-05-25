@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import { ArrowRight, Search, X, ChevronDown } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import Dropdown from "@/components/ui/Dropdown";
 import { products, productCategories } from "@/data/products";
 
 export default function ProductsPageContent() {
@@ -127,7 +128,7 @@ export default function ProductsPageContent() {
       </section>
 
       {/* Category Tab Selector */}
-      <section className="py-4 bg-white sticky top-[72px] z-30 border-b border-gray-100 shadow-sm">
+      <section className="py-4 bg-white sticky top-[72px] z-30 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
         <div className="max-w-[1200px] mx-auto px-5">
           <div className="flex flex-wrap gap-2 md:gap-3 items-center">
             <button
@@ -164,7 +165,7 @@ export default function ProductsPageContent() {
         <div className="max-w-[1200px] mx-auto px-5">
           
           {/* Header Panel with Result Count and Inline Selectors */}
-          <div className="bg-white rounded-2xl border border-gray-150 p-4 mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
+          <div className="bg-white rounded-2xl p-5 mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-[0_8px_30px_rgba(0,0,0,0.03)]">
             <div>
               <p className="text-gray-500 text-sm font-medium">
                 Showing <span className="font-bold text-text-dark">{filteredProducts.length}</span> products
@@ -182,11 +183,11 @@ export default function ProductsPageContent() {
             </div>
 
             {/* Inline Selectors */}
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto">
               {searchQuery && (
                 <Link
                   href="/products"
-                  className="inline-flex items-center gap-1 bg-red-500 hover:bg-red-600 text-white text-xs font-semibold px-3.5 py-2 rounded-xl transition-colors shadow-sm cursor-pointer mr-1"
+                  className="inline-flex items-center justify-center gap-1.5 bg-rose-500 hover:bg-rose-600 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors shadow-sm cursor-pointer w-full md:w-auto shrink-0"
                 >
                   <X className="w-3.5 h-3.5" />
                   Clear Search
@@ -194,33 +195,31 @@ export default function ProductsPageContent() {
               )}
 
               {/* Status Selector Dropdown */}
-              <div className="relative inline-flex items-center bg-bg-light border border-gray-200 rounded-xl px-3 py-2 cursor-pointer group">
-                <span className="text-xs text-gray-500 font-semibold mr-2 shrink-0">Status:</span>
-                <select
-                  value={statusFilter}
-                  onChange={(e) => handleStatusChange(e.target.value as any)}
-                  className="bg-transparent text-xs font-bold text-text-dark border-none outline-none pr-6 cursor-pointer focus:ring-0 appearance-none font-sans"
-                >
-                  <option value="all">All Products</option>
-                  <option value="available">Available Now</option>
-                  <option value="coming-soon">Coming Soon</option>
-                </select>
-                <ChevronDown className="w-3.5 h-3.5 text-text-dark absolute right-3 pointer-events-none group-hover:text-primary transition-colors" />
-              </div>
+              <Dropdown
+                label="Status"
+                value={statusFilter}
+                options={[
+                  { value: "all", label: "All Products" },
+                  { value: "available", label: "Available Now" },
+                  { value: "coming-soon", label: "Coming Soon" },
+                ]}
+                onChange={handleStatusChange}
+                align="left"
+                className="flex-1 min-w-[140px] md:flex-none"
+              />
 
               {/* Sort Selector Dropdown */}
-              <div className="relative inline-flex items-center bg-bg-light border border-gray-200 rounded-xl px-3 py-2 cursor-pointer group">
-                <span className="text-xs text-gray-500 font-semibold mr-2 shrink-0">Sort By:</span>
-                <select
-                  value={sortOrder}
-                  onChange={(e) => handleSortChange(e.target.value as any)}
-                  className="bg-transparent text-xs font-bold text-text-dark border-none outline-none pr-6 cursor-pointer focus:ring-0 appearance-none font-sans"
-                >
-                  <option value="name-asc">Name (A - Z)</option>
-                  <option value="name-desc">Name (Z - A)</option>
-                </select>
-                <ChevronDown className="w-3.5 h-3.5 text-text-dark absolute right-3 pointer-events-none group-hover:text-primary transition-colors" />
-              </div>
+              <Dropdown
+                label="Sort By"
+                value={sortOrder}
+                options={[
+                  { value: "name-asc", label: "Name (A - Z)" },
+                  { value: "name-desc", label: "Name (Z - A)" },
+                ]}
+                onChange={handleSortChange}
+                align="right"
+                className="flex-1 min-w-[140px] md:flex-none"
+              />
             </div>
           </div>
 
@@ -230,9 +229,9 @@ export default function ProductsPageContent() {
               <ScrollReveal key={product.id} delay={i * 0.05}>
                 <Link
                   href={`/products/${product.slug}`}
-                  className="block bg-white rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group h-full border border-gray-150/40"
+                  className="block bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)] transition-all duration-300 group h-full"
                 >
-                  <div className="relative h-[220px] overflow-hidden bg-bg-light border-b border-gray-100 flex items-center justify-center">
+                  <div className="relative h-[220px] overflow-hidden bg-gray-50 flex items-center justify-center">
                     <Image
                       src={product.image}
                       alt={product.name}
@@ -264,14 +263,14 @@ export default function ProductsPageContent() {
                         {product.specs.slice(0, 3).map((spec) => (
                           <span
                             key={spec.label}
-                            className="text-[10px] bg-bg-light text-gray-500 px-2 py-1 rounded font-semibold border border-gray-200/60"
+                            className="text-[10px] bg-gray-100 text-gray-600 px-2.5 py-1 rounded-md font-semibold"
                           >
                             {spec.label}: {spec.value}
                           </span>
                         ))}
                       </div>
                     </div>
-                    <div className="flex justify-between items-center mt-6 pt-4 border-t border-gray-100">
+                    <div className="flex justify-between items-center mt-6 pt-4 border-t border-gray-100/70">
                       <span className="text-sm font-bold text-primary">{product.priceRange}</span>
                       <span className="text-electric font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
                         View Details
@@ -286,7 +285,7 @@ export default function ProductsPageContent() {
 
           {/* Empty state panel */}
           {filteredProducts.length === 0 && (
-            <div className="text-center py-24 bg-white rounded-2xl shadow-sm px-5 border border-gray-150">
+            <div className="text-center py-24 bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] px-5">
               <div className="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
                 <Search className="w-8 h-8 text-primary" />
               </div>

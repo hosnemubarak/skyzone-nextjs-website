@@ -26,6 +26,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import type { Product } from "@/data/products";
 import { cn } from "@/lib/utils";
+import { companyInfo } from "@/data/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Props {
@@ -119,8 +120,8 @@ export default function ProductDetailContent({ product, relatedProducts }: Props
   // Specifications search filtering
   const filteredSpecs = product.specs.filter(
     (s) =>
-      s.label.toLowerCase().includes(specQuery.toLowerCase()) ||
-      s.value.toLowerCase().includes(specQuery.toLowerCase())
+      (s.label || "").toLowerCase().includes(specQuery.toLowerCase()) ||
+      (s.value || "").toLowerCase().includes(specQuery.toLowerCase())
   );
 
   // Gallery interactive tabs definition
@@ -723,13 +724,13 @@ export default function ProductDetailContent({ product, relatedProducts }: Props
                     </div>
                     <div>
                       <h4 className="text-base font-bold text-white uppercase tracking-wider">Direct Support Hotlines</h4>
-                      <p className="text-sm text-white/60 mt-0.5">+880 1XXX-XXXXXX (Commercial Desk)</p>
+                      <p className="text-sm text-white/60 mt-0.5">{companyInfo.phone} (Commercial Desk)</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="text-sm md:text-base text-white/40 mt-8 lg:mt-0">
-                  Sky Zone International &middot; Shamshuddin Tower, Chittagong
+                  {companyInfo.name} &middot; Jubilee Road, Chittagong
                 </div>
               </div>
 

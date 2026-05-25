@@ -101,17 +101,34 @@ export default function Footer() {
           <div>
             <h4 className="font-heading font-semibold text-lg mb-4">Contact Us</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                <span className="text-white/60 text-sm">{companyInfo.address}</span>
+              <li className="flex items-start gap-3 group">
+                <MapPin className="w-5 h-5 text-accent shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <a
+                  href={companyInfo.mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/60 hover:text-accent text-sm transition-colors leading-relaxed"
+                >
+                  {companyInfo.address}
+                </a>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-accent shrink-0" />
-                <span className="text-white/60 text-sm">{companyInfo.phone}</span>
+              <li className="flex items-center gap-3 group">
+                <Phone className="w-5 h-5 text-accent shrink-0 group-hover:scale-110 transition-transform" />
+                <a
+                  href={`tel:${companyInfo.phone}`}
+                  className="text-white/60 hover:text-accent text-sm transition-colors"
+                >
+                  {companyInfo.phone}
+                </a>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-accent shrink-0" />
-                <span className="text-white/60 text-sm">{companyInfo.email}</span>
+              <li className="flex items-center gap-3 group">
+                <Mail className="w-5 h-5 text-accent shrink-0 group-hover:scale-110 transition-transform" />
+                <a
+                  href={`mailto:${companyInfo.email}`}
+                  className="text-white/60 hover:text-accent text-sm transition-colors"
+                >
+                  {companyInfo.email}
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="w-5 h-5 text-accent shrink-0" />

@@ -80,15 +80,20 @@ export default function SearchBar({ isOpen, onClose }: SearchBarProps) {
     localStorage.removeItem("sz_recent_searches");
   };
 
-  // Submit search form
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const trimmed = query.trim();
+  // Execute the search
+  const executeSearch = (searchTerm: string) => {
+    const trimmed = searchTerm.trim();
     if (trimmed.length > 0) {
       saveSearchTerm(trimmed);
       router.push(`/products?search=${encodeURIComponent(trimmed)}`);
       onClose();
     }
+  };
+
+  // Submit search form
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    executeSearch(query);
   };
 
   // Click suggestion/recent search
@@ -345,8 +350,9 @@ export default function SearchBar({ isOpen, onClose }: SearchBarProps) {
 
                             {/* View All Search Results Form Trigger */}
                             <button
-                              type="submit"
-                              className="w-full flex items-center justify-center gap-2 px-3 py-3 mt-3 text-sm text-white bg-primary hover:bg-primary-dark font-semibold rounded-xl transition-all shadow-sm"
+                              type="button"
+                              onClick={() => executeSearch(query)}
+                              className="w-full flex items-center justify-center gap-2 px-3 py-3 mt-3 text-sm text-white bg-primary hover:bg-primary-dark font-semibold rounded-xl transition-all shadow-sm cursor-pointer"
                             >
                               Search All Products for &ldquo;{query}&rdquo;
                               <ArrowRight className="w-4 h-4" />

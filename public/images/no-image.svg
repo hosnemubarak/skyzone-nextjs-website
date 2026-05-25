@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="400" height="300" fill="#F8FAFC"/>
+  <!-- Decorative Grid Pattern in Background -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#F1F5F9" stroke-width="1.5"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="url(#grid)"/>
+  
+  <!-- Central Icon & Graphic -->
+  <g transform="translate(170, 90)">
+    <!-- Outer Rounded Shield/Card -->
+    <rect x="-10" y="-10" width="80" height="70" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2" filter="drop-shadow(0px 2px 4px rgba(0,0,0,0.02))"/>
+    
+    <!-- Image/Landscape icon -->
+    <rect x="5" y="10" width="50" height="36" rx="6" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="18" cy="20" r="4" fill="#94A3B8"/>
+    <path d="M8 43 L22 28 L35 39 L41 33 L49 43" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Premium Typography -->
+  <text x="50%" y="195" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#64748B" text-anchor="middle" letter-spacing="0.5">IMAGE NOT AVAILABLE</text>
+  <text x="50%" y="215" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500" fill="#94A3B8" text-anchor="middle">Full Technical Data Available Below</text>
+</svg>

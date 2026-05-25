@@ -73,9 +73,8 @@ export default function Header() {
                     <ChevronDown className="w-4 h-4" />
                   </button>
 
-                  {/* Mega Menu */}
                   <div className="mega-menu absolute top-full left-1/2 -translate-x-1/2 pt-2">
-                    <div className="bg-white rounded-xl shadow-2xl p-6 grid grid-cols-4 gap-3 min-w-[700px]">
+                    <div className="bg-white rounded-xl shadow-2xl p-6 grid grid-cols-5 gap-3.5 min-w-[880px]">
                       {item.children.map((child) => {
                         const IconComp = iconMap[child.icon || "Sun"] || Sun;
                         return (

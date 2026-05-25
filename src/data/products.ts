@@ -73,7 +73,7 @@ xeroxG4ProSmallModels.forEach((model, idx) => {
     inverterType: "on-grid",
     description: `The Knox Xerox G4 Pro ${model.name} is a high-performance three-phase grid-tied string inverter with a rated AC output of ${model.power} and support for up to ${model.pv} PV array power. Featuring dual MPPT trackers and an IP66 rated all-aluminium casing, it is perfect for residential and commercial solar installations. Real-time commissioning is done via the AI Solar app.`,
     shortDescription: `Three-phase on-grid inverter, rated at ${model.power} with dual MPPT and IP66 casing.`,
-    image: "/images/product-inverter.png",
+    image: "/images/Xerox-G4-Pro-5-25kw.png",
     badge: idx === 0 ? "Popular" : undefined,
     specs: [
       { label: "Model", value: `G4 Pro ${model.name}` },
@@ -123,7 +123,7 @@ xeroxG4ProLargeModels.forEach((model, idx) => {
     inverterType: "on-grid",
     description: `Designed for commercial and industrial rooftops, the Xerox G4 Pro ${model.name} is a high-power three-phase string inverter with a rated AC output of ${model.power}. It features ${model.mppts} MPPT trackers for flexible PV array designs under complex conditions and ShadeSol technology to optimize generation under shade. Includes Phoenix Contact connectors and Type II AC & DC surge protection.`,
     shortDescription: `Commercial three-phase inverter, rated at ${model.power} with ${model.mppts} MPPTs and ShadeSol.`,
-    image: "/images/product-inverter.png",
+    image: "/images/Xerox-G4-Pro-30-60kw.png",
     badge: idx === 3 ? "Best Seller" : undefined,
     specs: [
       { label: "Model", value: `G4 Pro ${model.name}` },
@@ -172,7 +172,7 @@ xeroxG4ProMaxModels.forEach((model, idx) => {
     inverterType: "on-grid",
     description: `The industrial-grade Xerox G4 Pro ${model.name} series delivers high-power three-phase conversion with ${model.mppts} MPPT trackers. Designed to support modern high-power bifacial solar modules (up to 21A per string), it achieves an outstanding maximum efficiency of 99.0%. Includes built-in AFCI protection, smart fan cooling, and Type II SPD protection on both AC and DC sides.`,
     shortDescription: `Utility-scale three-phase inverter, rated at ${model.power} with ${model.mppts} MPPTs and built-in AFCI.`,
-    image: "/images/product-inverter.png",
+    image: "/images/Xerox-G4-Pro-100-125kw.png",
     badge: idx === 2 ? "New" : undefined,
     specs: [
       { label: "Model", value: `G4 Pro ${model.name}` },
@@ -229,7 +229,7 @@ xeroxG4Models.forEach((model) => {
     inverterType: "on-grid",
     description: `The standard Xerox G4 ${model.name} series provides cost-effective, high-efficiency three-phase grid-tied conversion. Perfect for residential and commercial systems, it features a rated AC output of ${model.power} and supports up to ${model.pv} PV input power. Includes dual MPPTs, IP66-rated enclosure, and quiet natural convection cooling.`,
     shortDescription: `Standard three-phase grid-tied string inverter, rated at ${model.power} with dual MPPT.`,
-    image: "/images/product-inverter.png",
+    image: "/images/Xerox-G4-3-25kw.png",
     specs: [
       { label: "Model", value: `G4 ${model.name}` },
       { label: "Rated Power", value: model.power },
@@ -329,7 +329,7 @@ kryptonEcoModels.forEach((model) => {
     inverterType: "hybrid",
     description: `The Krypton Eco ${model.name} is a single-phase hybrid inverter with grid-feeding capability. Featuring a rated power of ${model.power} and grid-feeding capacity of ${model.gridFeed}, it supports battery-independent operation, a built-in anti-dust kit, and smart battery equalization. Ideal for residential users seeking to lower electricity bills by feeding excess solar energy back into the grid.`,
     shortDescription: `Single-phase grid-feeding hybrid inverter, rated at ${model.power} with anti-dust kit.`,
-    image: "/images/product-inverter.png",
+    image: "/images/knox-Krypton-eco-series.png",
     specs: [
       { label: "Model", value: `Krypton Eco ${model.name}` },
       { label: "Model Number", value: model.modelNo },
@@ -381,7 +381,7 @@ kryptonModels.forEach((model, idx) => {
     inverterType: "hybrid",
     description: `The Krypton ${model.name} is a premium single-phase grid-feeding hybrid inverter rated at ${model.power}. It features a large HMI touchscreen on advanced models, supporting high PV input currents (up to 30A), dual outputs for smart load management, and parallel expansion up to 9 units (9000/9055 models) or 6 units (12002-15002 models). Compatible with utility grids, generators, and batteries.`,
     shortDescription: `Premium single-phase hybrid inverter, rated at ${model.power} with HMI touchscreen and parallel capability.`,
-    image: "/images/product-inverter.png",
+    image: "/images/knox-Krypton-series.png",
     badge: idx === 3 ? "Best Seller" : undefined,
     specs: [
       { label: "Model", value: `Krypton ${model.name}` },
@@ -429,7 +429,7 @@ xenonModels.forEach((model) => {
     inverterType: "hybrid",
     description: `The Xenon ${model.name} is an IP66 rated waterproof and dustproof ${model.phase.toLowerCase()} hybrid inverter rated at ${model.power}. It features a large 7-inch HMI color touchscreen, dual MPPT trackers, a battery-independent design, and support for parallel operation. Fully compatible with generator inputs and high-power PV panels.`,
     shortDescription: `IP66 waterproof ${model.phase.toLowerCase()} hybrid inverter, rated at ${model.power} with 7" touchscreen.`,
-    image: "/images/product-inverter.png",
+    image: "/images/knox-Xenon-series.png",
     specs: [
       { label: "Model", value: `Xenon ${model.name}` },
       { label: "Model Number", value: model.modelNo },
@@ -476,7 +476,7 @@ zynexModels.forEach((model) => {
     inverterType: "hybrid",
     description: `The Zynex ${model.name} is a high-performance single-phase hybrid inverter with 3 independent MPPT trackers. Rated at ${model.power} and supporting up to ${model.pv} PV array power, it allows flexible solar setups on complex orientations. With IP66 protection, ShadeSol shadow management, and ultra-fast <10ms UPS transfer, it ensures uninterrupted power.`,
     shortDescription: `Single-phase hybrid inverter, rated at ${model.power} with 3 independent MPPTs and IP66 rating.`,
-    image: "/images/product-inverter.png",
+    image: "/images/knox-Zynex-series.png",
     specs: [
       { label: "Model", value: model.name },
       { label: "Rated Power", value: model.power },
@@ -587,7 +587,7 @@ powerwallModels.forEach((model, idx) => {
       { label: "Battery Chemistry", value: "LiFePO4 (Lithium Iron Phosphate)" },
       { label: "Cycle Life", value: "6000+ Cycles @ 90% DOD" },
       { label: "BMS Type", value: "Integrated Smart PACE BMS" },
-      { label: "Protection Rating", value: model.ip },
+      { label: "Protection Rating", value: "IP66" },
       { label: "Dimensions", value: model.dim },
       { label: "Weight", value: model.weight },
     ],
@@ -709,13 +709,13 @@ const monitoringFeatures = [
 
 monitoringModels.forEach((model) => {
   addProduct({
-    slug: `knox-com-${model.name.toLowerCase().replace(" ", "-")}`,
+    slug: `knox-com-${model.name.toLowerCase().replace(/ /g, "-")}`,
     name: `Knox ${model.name} Inverter Datalogger`,
     category: "Monitoring & Accessories",
     categorySlug: "accessories",
     description: `The Knox ${model.name} is a plug-and-play datalogger designed to connect Knox inverters directly to the Knox Cloud monitoring portal. It collects operational status, battery levels, and energy generation data, uploading it via ${model.network}. Rated IP66, it operates reliably in outdoor setups and has local storage to safeguard data during network downtime.`,
     shortDescription: `Plug-and-play datalogger stick supporting ${model.network} and IP66 casing.`,
-    image: "/images/product-electrical.png",
+    image: "/images/no-image.svg",
     specs: [
       { label: "Model", value: model.name },
       { label: "Network Connectivity", value: model.network },
@@ -729,7 +729,7 @@ monitoringModels.forEach((model) => {
     ],
     features: monitoringFeatures,
     priceRange: "Contact for Price",
-    published: false,
+    published: true,
   });
 });
 
@@ -761,6 +761,12 @@ const rawCategories = [
     slug: "solar-solution",
     description: "Knox Complete Solar Solutions & Packages",
     icon: "Sun",
+  },
+  {
+    name: "Monitoring & Accessories",
+    slug: "accessories",
+    description: "Knox Smart Datalogging & Communication Devices",
+    icon: "Cable",
   },
 ];
 

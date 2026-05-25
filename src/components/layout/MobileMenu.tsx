@@ -162,14 +162,20 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
             {/* Bottom info */}
             <div className="px-5 py-6 border-t border-white/10">
-              <div className="flex items-center gap-3 text-white/60 text-sm mb-2">
+              <a
+                href={`tel:${companyInfo.phone}`}
+                className="flex items-center gap-3 text-white/60 hover:text-accent text-sm mb-2 transition-colors cursor-pointer"
+              >
                 <Phone className="w-4 h-4" />
                 <span>{companyInfo.phone}</span>
-              </div>
-              <div className="flex items-center gap-3 text-white/60 text-sm mb-4">
+              </a>
+              <a
+                href={`mailto:${companyInfo.email}`}
+                className="flex items-center gap-3 text-white/60 hover:text-accent text-sm mb-4 transition-colors cursor-pointer"
+              >
                 <Mail className="w-4 h-4" />
                 <span>{companyInfo.email}</span>
-              </div>
+              </a>
               <div className="flex gap-3">
                 {(["facebook", "linkedin", "youtube"] as const).map((type) => (
                   <a

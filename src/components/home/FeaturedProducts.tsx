@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -8,7 +9,49 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { products } from "@/data/products";
 
 export default function FeaturedProducts() {
-  const featured = products.slice(0, 6);
+  const featured = useMemo(() => {
+    // 1. Group products by categorySlug and sort them:
+    //    - Prioritize published products first
+    //    - Sort alphabetically by name within the same publication status
+    const categoryCounts = products.reduce((acc, p) => {
+      acc[p.categorySlug] = (acc[p.categorySlug] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
+
+    const categories = Array.from(new Set(products.map((p) => p.categorySlug)))
+      .sort((a, b) => categoryCounts[b] - categoryCounts[a]);
+
+    const groups: Record<string, typeof products> = {};
+    categories.forEach((cat) => {
+      groups[cat] = products
+        .filter((p) => p.categorySlug === cat)
+        .sort((a, b) => {
+          if (a.published !== b.published) {
+            return a.published ? -1 : 1;
+          }
+          return a.name.localeCompare(b.name);
+        });
+    });
+
+    // 2. Select up to 6 products using round-robin representation
+    const selected: typeof products = [];
+    let index = 0;
+    while (selected.length < 6) {
+      let addedAny = false;
+      for (const cat of categories) {
+        if (groups[cat] && groups[cat].length > index) {
+          selected.push(groups[cat][index]);
+          addedAny = true;
+          if (selected.length === 6) break;
+        }
+      }
+      if (!addedAny) break;
+      index++;
+    }
+
+    // 3. Sort the chosen 6 products alphabetically by name
+    return selected.sort((a, b) => a.name.localeCompare(b.name));
+  }, []);
 
   return (
     <section className="bg-bg-light py-16 md:py-24">

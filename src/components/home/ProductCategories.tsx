@@ -20,7 +20,7 @@ export default function ProductCategories() {
           subtitle="From solar panels to electrical equipment — everything you need for reliable energy infrastructure"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mt-12">
           {productCategories.map((cat, i) => {
             const IconComp = iconMap[cat.icon] || Sun;
             return (

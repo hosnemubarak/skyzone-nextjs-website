@@ -132,18 +132,50 @@ export default function ContactPageContent() {
                   <h3 className="font-heading font-semibold text-xl">Contact Information</h3>
                   <div className="space-y-6 mt-6">
                     {[
-                      { icon: MapPin, label: "Address", value: companyInfo.address },
-                      { icon: Phone, label: "Phone", value: companyInfo.phone },
-                      { icon: Mail, label: "Email", value: companyInfo.email },
-                      { icon: Clock, label: "Business Hours", value: `${companyInfo.hours}\n${companyInfo.closedDay}` },
-                    ].map(({ icon: Icon, label, value }) => (
+                      {
+                        icon: MapPin,
+                        label: "Address",
+                        value: companyInfo.address,
+                        href: companyInfo.mapLink,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                      },
+                      {
+                        icon: Phone,
+                        label: "Phone",
+                        value: companyInfo.phone,
+                        href: `tel:${companyInfo.phone}`,
+                      },
+                      {
+                        icon: Mail,
+                        label: "Email",
+                        value: companyInfo.email,
+                        href: `mailto:${companyInfo.email}`,
+                      },
+                      {
+                        icon: Clock,
+                        label: "Business Hours",
+                        value: `${companyInfo.hours}\n${companyInfo.closedDay}`,
+                      },
+                    ].map(({ icon: Icon, label, value, href, target, rel }) => (
                       <div key={label} className="flex items-start gap-4">
                         <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                           <Icon className="w-5 h-5 text-accent" />
                         </div>
                         <div>
                           <p className="text-white/50 text-xs uppercase tracking-wider">{label}</p>
-                          <p className="text-white/90 text-sm mt-0.5 whitespace-pre-line">{value}</p>
+                          {href ? (
+                            <a
+                              href={href}
+                              target={target}
+                              rel={rel}
+                              className="text-white/90 text-sm mt-0.5 block hover:text-accent transition-colors whitespace-pre-line font-medium"
+                            >
+                              {value}
+                            </a>
+                          ) : (
+                            <p className="text-white/90 text-sm mt-0.5 whitespace-pre-line font-medium">{value}</p>
+                          )}
                         </div>
                       </div>
                     ))}
@@ -190,7 +222,7 @@ export default function ContactPageContent() {
         <div className="max-w-[1200px] mx-auto px-5">
           <div className="rounded-xl overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.257!2d91.8123!3d22.3569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd8a2a645ee07%3A0x2c1c5e9e9e6c0c9e!2sChittagong!5e0!3m2!1sen!2sbd!4v1700000000000"
+              src="https://maps.google.com/maps?q=22.3363729,91.8322532&z=18&output=embed"
               width="100%"
               height="400"
               style={{ border: 0 }}
