@@ -146,7 +146,11 @@ export default function ProductsPageContent() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    {product.badge && (
+                    {!product.published ? (
+                      <span className="absolute top-3 left-3 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10 animate-pulse">
+                        Coming Soon
+                      </span>
+                    ) : product.badge && (
                       <span className="absolute top-3 left-3 bg-accent text-primary text-xs font-bold px-3 py-1 rounded-full shadow-sm">
                         {product.badge}
                       </span>

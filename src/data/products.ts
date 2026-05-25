@@ -706,8 +706,8 @@ monitoringModels.forEach((model) => {
   });
 });
 
-// Export active products only (filtered by published state)
-export const products = productsList.filter((p) => p.published);
+// Export all products on the website (both published and coming soon)
+export const products = productsList;
 
 // Category metadata list defining the standard categories based on product types
 const rawCategories = [

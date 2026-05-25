@@ -151,7 +151,11 @@ export default function ProductDetailContent({ product, relatedProducts }: Props
             </div>
           </div>
           <div className="flex items-center gap-4">
-            {product.badge && (
+            {!product.published ? (
+              <span className="text-[10px] bg-amber-500 text-white font-bold px-2.5 py-0.5 rounded-full shadow-sm animate-pulse">
+                Coming Soon
+              </span>
+            ) : product.badge && (
               <span className="text-[10px] bg-accent/20 text-accent-dark border border-accent/20 font-bold px-2.5 py-0.5 rounded-full">
                 {product.badge}
               </span>
@@ -230,7 +234,11 @@ export default function ProductDetailContent({ product, relatedProducts }: Props
                               : { transform: "scale(1)" }
                           }
                         />
-                        {product.badge && (
+                        {!product.published ? (
+                          <span className="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-md z-10 animate-pulse">
+                            Coming Soon
+                          </span>
+                        ) : product.badge && (
                           <span className="absolute top-4 left-4 bg-accent text-primary text-xs font-bold px-3.5 py-1.5 rounded-full shadow-md z-10">
                             {product.badge}
                           </span>
@@ -426,7 +434,11 @@ export default function ProductDetailContent({ product, relatedProducts }: Props
                         {product.series}
                       </span>
                     )}
-                    {product.badge && (
+                    {!product.published ? (
+                      <span className="inline-flex bg-amber-500 border border-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider animate-pulse">
+                        Coming Soon
+                      </span>
+                    ) : product.badge && (
                       <span className="inline-flex bg-accent/20 border border-accent/20 text-accent-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                         {product.badge}
                       </span>
